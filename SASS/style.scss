@@ -1,0 +1,580 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// Font size
+$text-xs: 13.5px;
+$text-s: 16.5px;
+$text-l: 23.25px;
+$text-xl: 57px;
+
+// Text color
+$text-c1-color: #181818;
+$text-c2-color: #b61984;
+$text-c3-color: #ffffff;
+
+// Background color
+$bg-c1-color: #b61984;
+$bg-c2-color: #fff;
+$bg-c3-color: #dcd1f3;
+
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@mixin buttonForm ($bg: $bg-c1-color) {
+    background-color: $bg;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: 1px solid #b61984;
+}
+
+@mixin bgimgForm () {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@mixin spanForm() {
+    color: $text-c2-color;
+    font-size: $text-s;
+    font-weight: 600;
+}
+
+@mixin h2Form() {
+    font-size: $text-xl;
+    color: $text-c1-color;
+    font-weight: 700;
+}
+
+@mixin h4Form() {
+    color: $text-c3-color;
+    font-size: $text-l;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+@mixin footerSpanForm() {
+    color: $text-c3-color;
+    font-size: $text-xs;
+    padding-bottom: 20px;
+}
+
+
+// Animate 
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+// Header
+.header {
+    position: relative;
+    right: 0;
+    left: 0;
+
+    // container
+    .container {
+
+        .navbar {
+            padding: 0;
+
+            a {
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+
+            .collapse {
+                align-items: center !important;
+
+                ul {
+                    align-items: center !important;
+
+                    li {
+                        .atagedit {
+                            padding-right: 50px
+                        }
+
+
+                        button {
+                            @include buttonForm();
+                            margin-left: 50px;
+                            transition: 0.5s;
+
+                            &:hover {
+                                background-color: $bg-c2-color;
+                                color: $text-c2-color;
+                            }
+                        }
+
+                        a {
+                            padding: 0;
+                            line-height: 80px;
+                            color: $text-c1-color;
+                            font-size: $text-xs;
+                            font-weight: 600;
+
+                            i {
+                                color: $text-c1-color;
+                                font-size: $text-xs;
+                                font-weight: 600;
+                                margin-left: 11px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+// Carousel 
+.carousel {
+    background-image: url(../IMG/Violet_top_left_wave.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    padding-bottom: 60px;
+
+    img {
+        width: 100%;
+    }
+
+    // container
+    .container {
+        .detail {
+            display: flex;
+            align-items: center;
+            @media only screen and (max-width: 576px) {
+                flex-direction: column;
+            }
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                flex-direction: column;
+            }
+
+            .carousel__first {
+                width: 50%;
+                @media only screen and (max-width: 576px) {
+                    width: 100%;
+                }
+                @media only screen and (min-width: 577px) and (max-width: 992px) {
+                    width: 100%;
+                }
+               
+
+                span {
+                    @include spanForm();
+                }
+
+                h2 {
+                    @include h2Form();
+                    @media only screen and (max-width: 576px) {
+                       font-size: 8vw;
+                    }
+                    @media only screen and (min-width: 577px) and (max-width: 992px) {
+                        font-size: 7vw;
+                    }
+                    
+                }
+            }
+
+            .carousel__second {
+                width: 50%;
+                @media only screen and (max-width: 576px) {
+                    width: 100%;
+                }
+                @media only screen and (min-width: 577px) and (max-width: 992px) {
+                    width: 100%;
+                }
+               
+
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+}
+
+// Teacher 
+.teacher {
+    background-image: url(../IMG/Wave_White_bottom_right_shape_01.png);
+    padding-top: 30px;
+    background-size: cover;
+    background-color: #dcd1f3;
+
+
+    .container {
+
+        .teacher__row {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            @media only screen and (max-width: 576px) {
+                flex-direction: column;
+            }
+          
+
+            .column {
+                width: calc(100%/4);
+                padding: 0 20px;
+                margin-bottom: 40px;
+                @media only screen and (max-width: 576px) {
+                    width: 100%;
+                }
+                @media only screen and (min-width: 577px) and (max-width: 992px) {
+                    width: 50%;
+                }
+    
+
+                @for $i from 0 to 4 {
+                    .item-#{$i + 1} {
+                        animation: fadeInLeft (0.5s + $i);
+                    }
+                }
+
+
+                .item {
+                    background-color: $bg-c2-color;
+                    border-radius: 10px;
+                    transition: 0.5s;
+
+                    &:hover {
+                        -webkit-box-shadow: -1px 9px 15px -8px #000000;
+                        box-shadow: -1px 9px 15px -8px #000000;
+                    }
+
+                    img {
+                        width: 100%;
+                        border-radius: 10px 10px 0 0;
+                    }
+
+                    .detail {
+                        padding: 20px 0;
+                        background-color: rgba(255, 255, 255, 1);
+
+
+                        span {
+                            color: $text-c2-color;
+                            font-size: 11.5px;
+                            font-weight: 600;
+                        }
+
+                        h3 {
+                            font-size: $text-l;
+                            color: $text-c1-color;
+                            font-weight: 700;
+                        }
+
+                        p {
+                            font-size: 15px;
+                            color: $text-c1-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Course
+.course {
+    padding-top: 60px;
+    background-image: url(../IMG/accent_bottom_wave_01.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+
+    .container {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+        }
+        @media only screen and (min-width: 577px) and (max-width: 992px) {
+            flex-direction: column;
+        }
+
+
+        .course__first {
+            width: 50%;
+            padding: 0 40px;
+            @media only screen and (max-width: 576px) {
+                width: 100%;
+            }
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .course__second {
+            width: 50%;
+            padding: 0 70px;
+            @media only screen and (max-width: 576px) {
+                width: 100%;
+            }
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                width: 100%;
+            }
+
+            .course__form {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 1);
+                box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                padding: 25px;
+
+                .name-mail {
+                    display: flex;
+                    margin-bottom: 15px;
+                    @media only screen and (max-width: 576px) {
+                        flex-direction: column;
+                    }
+                    @media only screen and (min-width: 577px) and (max-width: 992px) {
+                        flex-direction: column;
+                    }
+                    
+
+                    input {
+                        max-width: 48%;
+                        @media only screen and (max-width: 576px) {
+                            max-width: 100%;
+                            margin: 0 !important;
+                            margin-bottom: 15px !important;
+                        }
+                        @media only screen and (min-width: 577px) and (max-width: 992px) {
+                            max-width: 100%;
+                            margin: 0 !important;
+                            margin-bottom: 15px !important;
+                        }
+                    }
+                }
+
+                h2 {
+                    @include h2Form();
+                    font-size: 37.5px;
+                }
+
+
+                input {
+                    padding: 9px;
+                    padding-left: 42px;
+                    border: 1px solid #b2a7a7;
+                    border-radius: 22px
+                }
+
+
+                select {
+                    padding: 9px;
+                    padding-left: 42px;
+                    border: 1px solid #b2a7a7;
+                    border-radius: 22px;
+                    margin-bottom: 15px;
+
+                    @media only screen and (max-width: 576px) {
+                       margin-bottom: 30px;
+                    }
+                }
+
+
+                textarea {
+                    padding: 12px 12px 12px 42px;
+                    height: 100px;
+                    border: 1px solid #b2a7a7;
+                    border-radius: 22px;
+                    margin-bottom: 45px;
+                    @media only screen and (max-width: 576px) {
+                        margin-bottom: 30px !important;
+                    }
+                }
+
+
+
+                button {
+                    @include buttonForm();
+                    padding: 10px 40px;
+                    max-width: 150px;
+                    transition: 0.5s;
+
+                    &:hover {
+                        background-color: $bg-c2-color;
+                        color: $text-c2-color;
+                    }
+
+                    @media only screen and (max-width: 576px) {
+                        max-width: 100%;
+                    }
+                    @media only screen and (min-width: 577px) and (max-width: 992px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// Footer 
+.footer {
+    background-image: url(../IMG/footer_background.jpg);
+    padding: 120px 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media only screen and (max-width: 576px) {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    @media only screen and (min-width: 577px) and (max-width: 992px) {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+        }
+        @media only screen and (min-width: 577px) and (max-width: 992px) {
+            flex-wrap: wrap;
+        }
+
+        .footer__first {
+            display: flex;
+            flex-direction: column;
+            padding: 0 40px;
+            @media only screen and (max-width: 576px) {
+                margin-bottom: 25px;
+            }
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                width: 50%;
+                margin-bottom: 25px;
+            }
+
+
+            h4 {
+                @include h4Form();
+            }
+
+            span {
+                @include footerSpanForm();
+            }
+
+            .icon {
+
+                i {
+                    @include footerSpanForm();
+                    margin-right: 12px;
+                }
+
+            }
+        }
+
+        .footer__second {
+            display: flex;
+            flex-direction: column;
+            padding: 0 40px;
+            @media only screen and (max-width: 576px) {
+                margin-bottom: 25px;
+            }
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                width: 50%;
+                margin-bottom: 25px;
+            }
+
+            h4 {
+                @include h4Form();
+            }
+
+            a {
+                text-decoration: none;
+                @include footerSpanForm();
+            }
+
+        }
+
+        .footer__third {
+            @extend .footer__second;
+        }
+
+        .footer__fourth {
+            display: flex;
+            flex-direction: column;
+            padding: 0 40px;
+            @media only screen and (min-width: 577px) and (max-width: 992px) {
+                width: 50%;
+                margin-bottom: 25px;
+            }
+
+            h4 {
+                @include h4Form();
+            }
+
+            input {
+                text-align: center;
+                padding: 12px 20px;
+                border-radius: 22px;
+                margin-bottom: 10px;
+                background-color: $bg-c1-color;
+                color: $text-c3-color  !important;
+                border: 1px solid rgba(255, 255, 255, .1);
+            }
+
+            button {
+                @include buttonForm();
+                color: $text-c1-color;
+                background-color: $bg-c2-color;
+                font-weight: 600;
+                font-size: $text-xs;
+                transition: 0.5s;
+
+                &:hover {
+                    background-color: $bg-c1-color;
+                    color: $text-c3-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
