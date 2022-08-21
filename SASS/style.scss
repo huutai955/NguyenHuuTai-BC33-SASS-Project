@@ -366,60 +366,64 @@ $bg-c3-color: #dcd1f3;
 
             .course__form {
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
                 text-align: center;
                 background-color: rgba(255, 255, 255, 1);
                 box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
                 padding: 25px;
 
-                .name-mail {
-                    display: flex;
-                    margin-bottom: 15px;
-                    position: relative;
-                    @media only screen and (max-width: 576px) {
-                        flex-direction: column;
-                    }
-                    @media only screen and (min-width: 577px) and (max-width: 992px) {
-                        flex-direction: column;
-                    }
-
-                    .fa-user {
-                        position: absolute;
-                        top: 15px;
-                        left: 17px;
-                        color: #b61984;
-                    }
-
-                    .fa-envelope {
-                        position: absolute;
-                        color: #b61984;
-                        top: 15px;
-                        right: 180px;
-                    }
-                    
-
-                    input {
-                        max-width: 48%;
-                        @media only screen and (max-width: 576px) {
-                            max-width: 100%;
-                            margin: 0 !important;
-                            margin-bottom: 15px !important;
-                        }
-                        @media only screen and (min-width: 577px) and (max-width: 992px) {
-                            max-width: 100%;
-                            margin: 0 !important;
-                            margin-bottom: 15px !important;
-                        }
-                    }
-                }
+                
 
                 h2 {
+                    width: 100%;
                     @include h2Form();
                     font-size: 37.5px;
                     @media only screen and (max-width: 576px) {
                         font-size: 8vw;
                     }
                 }
+
+
+                .name {
+                    width: 50%;
+                    position: relative;
+                    margin-bottom: 15px;
+                    @media only screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                    input {
+                        width: 100%;
+                    }
+
+
+                    .fa-user {
+                        position: absolute;
+                        top: 15px;
+                        left: 18px;
+                        color: $text-c2-color;
+                    }
+                
+                }
+
+                .mail {
+                    @extend .name;
+                    @media only screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                    input {
+                        width: 100%;
+                    }
+
+                    .fa-envelope {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        color: $text-c2-color;
+                    }
+
+                }
+
+                
 
 
                 input {
@@ -430,6 +434,7 @@ $bg-c3-color: #dcd1f3;
                 }
 
                 .course__select {
+                    width: 100%;
                     position: relative;
                     .fa-graduation-cap {
                         position: absolute;
@@ -458,6 +463,7 @@ $bg-c3-color: #dcd1f3;
 
 
                 .course__text {
+                    width: 100%;
                     position: relative;
 
                     .fa-message {
@@ -468,6 +474,7 @@ $bg-c3-color: #dcd1f3;
                     }
 
                     textarea {
+                        width: 100%;
                         padding: 12px 12px 12px 42px;
                         height: 100px;
                         border: 1px solid #b2a7a7;
