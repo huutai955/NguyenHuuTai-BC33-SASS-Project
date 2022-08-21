@@ -96,6 +96,10 @@ $bg-c3-color: #dcd1f3;
 
         .navbar {
             padding: 0;
+            @media only screen and (max-width: 992px) {
+                flex-direction: row-reverse;
+            }
+
 
             a {
                 img {
@@ -106,9 +110,16 @@ $bg-c3-color: #dcd1f3;
 
             .collapse {
                 align-items: center !important;
-
                 ul {
-                    align-items: center !important;
+                    align-items: center;
+                    @media only screen and (max-width: 992px) {
+                        align-items: flex-start;
+                    }
+    
+
+                    .header__navicon {
+                        display: flex;
+                    }
 
                     li {
                         .atagedit {
@@ -120,6 +131,10 @@ $bg-c3-color: #dcd1f3;
                             @include buttonForm();
                             margin-left: 50px;
                             transition: 0.5s;
+                            @media only screen and (max-width: 992px) {
+                                margin: 0;
+                            }
+            
 
                             &:hover {
                                 background-color: $bg-c2-color;
