@@ -194,9 +194,18 @@
   -webkit-box-shadow: -1px 9px 15px -8px #000000;
   box-shadow: -1px 9px 15px -8px #000000;
 }
-.teacher .container .teacher__row .column .item img {
+.teacher .container .teacher__row .column .item .teacher__img {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  height: 181px;
+  overflow: hidden;
+}
+.teacher .container .teacher__row .column .item .teacher__img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.7s;
+}
+.teacher .container .teacher__row .column .item .teacher__img img:hover {
+  transform: scale(1.1);
 }
 .teacher .container .teacher__row .column .item .detail {
   padding: 20px 0;
@@ -314,6 +323,11 @@
   color: #181818;
   font-weight: 700;
   font-size: 37.5px;
+}
+@media only screen and (max-width: 576px) {
+  .course .container .course__second .course__form h2 {
+    font-size: 8vw;
+  }
 }
 .course .container .course__second .course__form input {
   padding: 9px;
@@ -461,9 +475,15 @@
 }
 .footer .container .footer__second a, .footer .container .footer__third a {
   text-decoration: none;
+  width: 65px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
   color: #ffffff;
   font-size: 13.5px;
   padding-bottom: 20px;
+}
+.footer .container .footer__second a:hover, .footer .container .footer__third a:hover {
+  color: #dcd1f3;
 }
 .footer .container .footer__fourth {
   display: flex;
