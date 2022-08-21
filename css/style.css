@@ -281,57 +281,14 @@
 }
 .course .container .course__second .course__form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
   padding: 25px;
 }
-.course .container .course__second .course__form .name-mail {
-  display: flex;
-  margin-bottom: 15px;
-  position: relative;
-}
-@media only screen and (max-width: 576px) {
-  .course .container .course__second .course__form .name-mail {
-    flex-direction: column;
-  }
-}
-@media only screen and (min-width: 577px) and (max-width: 992px) {
-  .course .container .course__second .course__form .name-mail {
-    flex-direction: column;
-  }
-}
-.course .container .course__second .course__form .name-mail .fa-user {
-  position: absolute;
-  top: 15px;
-  left: 17px;
-  color: #b61984;
-}
-.course .container .course__second .course__form .name-mail .fa-envelope {
-  position: absolute;
-  color: #b61984;
-  top: 15px;
-  right: 180px;
-}
-.course .container .course__second .course__form .name-mail input {
-  max-width: 48%;
-}
-@media only screen and (max-width: 576px) {
-  .course .container .course__second .course__form .name-mail input {
-    max-width: 100%;
-    margin: 0 !important;
-    margin-bottom: 15px !important;
-  }
-}
-@media only screen and (min-width: 577px) and (max-width: 992px) {
-  .course .container .course__second .course__form .name-mail input {
-    max-width: 100%;
-    margin: 0 !important;
-    margin-bottom: 15px !important;
-  }
-}
 .course .container .course__second .course__form h2 {
+  width: 100%;
   font-size: 57px;
   color: #181818;
   font-weight: 700;
@@ -342,6 +299,39 @@
     font-size: 8vw;
   }
 }
+.course .container .course__second .course__form .name, .course .container .course__second .course__form .mail {
+  width: 50%;
+  position: relative;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .course .container .course__second .course__form .name, .course .container .course__second .course__form .mail {
+    width: 100%;
+  }
+}
+.course .container .course__second .course__form .name input, .course .container .course__second .course__form .mail input {
+  width: 100%;
+}
+.course .container .course__second .course__form .name .fa-user, .course .container .course__second .course__form .mail .fa-user {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  color: #b61984;
+}
+@media only screen and (max-width: 768px) {
+  .course .container .course__second .course__form .mail {
+    width: 100%;
+  }
+}
+.course .container .course__second .course__form .mail input {
+  width: 100%;
+}
+.course .container .course__second .course__form .mail .fa-envelope {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #b61984;
+}
 .course .container .course__second .course__form input {
   padding: 9px;
   padding-left: 42px;
@@ -349,6 +339,7 @@
   border-radius: 22px;
 }
 .course .container .course__second .course__form .course__select {
+  width: 100%;
   position: relative;
 }
 .course .container .course__second .course__form .course__select .fa-graduation-cap {
@@ -371,6 +362,7 @@
   }
 }
 .course .container .course__second .course__form .course__text {
+  width: 100%;
   position: relative;
 }
 .course .container .course__second .course__form .course__text .fa-message {
@@ -380,6 +372,7 @@
   color: #b61984;
 }
 .course .container .course__second .course__form .course__text textarea {
+  width: 100%;
   padding: 12px 12px 12px 42px;
   height: 100px;
   border: 1px solid #b2a7a7;
