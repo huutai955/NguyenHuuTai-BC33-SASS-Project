@@ -290,6 +290,7 @@
 .course .container .course__second .course__form .name-mail {
   display: flex;
   margin-bottom: 15px;
+  position: relative;
 }
 @media only screen and (max-width: 576px) {
   .course .container .course__second .course__form .name-mail {
@@ -300,6 +301,18 @@
   .course .container .course__second .course__form .name-mail {
     flex-direction: column;
   }
+}
+.course .container .course__second .course__form .name-mail .fa-user {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  color: #b61984;
+}
+.course .container .course__second .course__form .name-mail .fa-envelope {
+  position: absolute;
+  color: #b61984;
+  top: 15px;
+  right: 180px;
 }
 .course .container .course__second .course__form .name-mail input {
   max-width: 48%;
@@ -335,7 +348,17 @@
   border: 1px solid #b2a7a7;
   border-radius: 22px;
 }
-.course .container .course__second .course__form select {
+.course .container .course__second .course__form .course__select {
+  position: relative;
+}
+.course .container .course__second .course__form .course__select .fa-graduation-cap {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  color: #b61984;
+}
+.course .container .course__second .course__form .course__select select {
+  width: 100%;
   padding: 9px;
   padding-left: 42px;
   border: 1px solid #b2a7a7;
@@ -343,11 +366,20 @@
   margin-bottom: 15px;
 }
 @media only screen and (max-width: 576px) {
-  .course .container .course__second .course__form select {
+  .course .container .course__second .course__form .course__select select {
     margin-bottom: 30px;
   }
 }
-.course .container .course__second .course__form textarea {
+.course .container .course__second .course__form .course__text {
+  position: relative;
+}
+.course .container .course__second .course__form .course__text .fa-message {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  color: #b61984;
+}
+.course .container .course__second .course__form .course__text textarea {
   padding: 12px 12px 12px 42px;
   height: 100px;
   border: 1px solid #b2a7a7;
@@ -355,7 +387,7 @@
   margin-bottom: 45px;
 }
 @media only screen and (max-width: 576px) {
-  .course .container .course__second .course__form textarea {
+  .course .container .course__second .course__form .course__text textarea {
     margin-bottom: 30px !important;
   }
 }
@@ -475,7 +507,7 @@
 }
 .footer .container .footer__second a, .footer .container .footer__third a {
   text-decoration: none;
-  width: 65px;
+  width: 70px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transition: 0.5s;
   color: #ffffff;
